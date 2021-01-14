@@ -5,25 +5,25 @@ import Rooms.Room;
 import java.util.ArrayList;
 
 public abstract class Warrior extends Character {
-    private ArrayList<WeaponType> weapons;
-    private WeaponType currentWeapon;
+    private ArrayList<Weapon> weapons;
+    private Weapon currentWeapon;
 
 
-    public Warrior(String name, int health, int fear, Room currentRoom, WeaponType currentWeapon) {
+    public Warrior(String name, int health, int fear, Room currentRoom, Weapon currentWeapon) {
         super(name, health, fear, currentRoom);
-        this.weapons = new ArrayList<WeaponType>();
+        this.weapons = new ArrayList<Weapon>();
         this.currentWeapon = currentWeapon;
     }
 
-    public ArrayList<WeaponType> getWeapon() {
+    public ArrayList<Weapon> getWeapon() {
         return weapons;
     }
 
-    public WeaponType getCurrentWeapon() {
+    public Weapon getCurrentWeapon() {
         return currentWeapon;
     }
 
-    public void setCurrentWeapon(WeaponType currentWeapon) {
+    public void setCurrentWeapon(Weapon currentWeapon) {
         this.currentWeapon = currentWeapon;
     }
 
@@ -31,19 +31,19 @@ public abstract class Warrior extends Character {
         return this.weapons.size();
     }
 
-    public void addWeapon(WeaponType weapon){
+    public void addWeapon(Weapon weapon){
         this.weapons.add(weapon);
     }
 
-    public void removeWeapon(WeaponType weapon){
+    public void removeWeapon(Weapon weapon){
         this.weapons.remove(weapon);
     }
 
-    public WeaponType getWeaponByIndex(int index){
+    public Weapon getWeaponByIndex(int index){
         return this.weapons.get(index);
     }
 
-    public int getWeaponIndexByWeapon(WeaponType weapon){
+    public int getWeaponIndexByWeapon(Weapon weapon){
         return this.weapons.indexOf(weapon);
     }
 

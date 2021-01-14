@@ -1,7 +1,8 @@
 package Characters.Warriors;
 
 public enum WeaponType {
-    BASICSWORD(2),
+    FIST(1),
+    SHORTSWORD(2),
     LONGSWORD(5),
     CLUB(3),
     AXE(4);
