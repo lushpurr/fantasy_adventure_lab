@@ -9,5 +9,11 @@ public class Weapon {
 
     }
 
+    public WeaponType getWeapon() {
+        return weapon;
+    }
 
+    public int getDamage(){
+        return weapon.getDamage();
+    }
 }

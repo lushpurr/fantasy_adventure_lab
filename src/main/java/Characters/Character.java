@@ -69,6 +69,13 @@ public abstract class Character {
         this.canBeAttacked = canBeAttacked;
     }
 
+    public void reduceHealth(int damage){
+        this.health -= damage;
+    }
+
+    public void increaseHealth(int healing){
+        this.health += healing;
+    }
 
 
 }

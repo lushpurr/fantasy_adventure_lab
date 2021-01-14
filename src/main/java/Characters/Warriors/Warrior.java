@@ -3,15 +3,17 @@ import Characters.Character;
 import Rooms.Room;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public abstract class Warrior extends Character {
     private ArrayList<Weapon> weapons;
     private Weapon currentWeapon;
+    private Weapon defaultFist;
 
 
     public Warrior(String name, int health, int fear, Room currentRoom, Weapon currentWeapon) {
         super(name, health, fear, currentRoom);
-        this.weapons = new ArrayList<Weapon>();
+        this.weapons = new ArrayList<Weapon>(Arrays.asList(defaultFist= new Weapon(WeaponType.FIST)));
         this.currentWeapon = currentWeapon;
     }
 
@@ -36,7 +38,10 @@ public abstract class Warrior extends Character {
     }
 
     public void removeWeapon(Weapon weapon){
-        this.weapons.remove(weapon);
+        if (this.weapons.indexOf(weapon) != 0)
+        {
+            this.weapons.remove(weapon);
+        }
     }
 
     public Weapon getWeaponByIndex(int index){
@@ -45,6 +50,15 @@ public abstract class Warrior extends Character {
 
     public int getWeaponIndexByWeapon(Weapon weapon){
         return this.weapons.indexOf(weapon);
+    }
+
+    public void attack(Character enemy){
+        if (enemy instanceof Knight){
+            enemy.reduceHealth(this.currentWeapon.getDamage() -2);
+        }
+        else {
+            enemy.reduceHealth(this.currentWeapon.getDamage());
+        }
     }
 
 }
