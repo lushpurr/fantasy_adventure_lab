@@ -17,5 +17,10 @@ public class Warlock extends Sorcerer implements IIntimidate {
         enemy.increaseFear(this.getCurrentSpell().getSpell().getFear());
 
     }
+
+    public void attack(Character enemy){
+        super.attack(enemy);
+        this.intimidate(enemy);
+    }
 }
 

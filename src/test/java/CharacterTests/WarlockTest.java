@@ -42,4 +42,11 @@ public class WarlockTest {
         warlock.intimidate(barbarian);
         assertEquals(2, barbarian.getFear());
     }
+
+    @Test
+    public void warlockCanDamageAndIntimidate(){
+        warlock.attack(barbarian);
+        assertEquals(7 , barbarian.getHealth());
+        assertEquals(2, barbarian.getFear());
+    }
 }
