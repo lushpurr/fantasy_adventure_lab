@@ -40,6 +40,6 @@ public class WarlockTest {
     @Test
     public void canIntimidate(){
         warlock.intimidate(barbarian);
-        assertEquals(5, barbarian.getFear());
+        assertEquals(2, barbarian.getFear());
     }
 }
