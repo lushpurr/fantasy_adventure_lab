@@ -1,6 +1,6 @@
 package Characters;
 
-public interface IInvisible {
+public interface IInvisible{
 
     void goInvisible();
 }

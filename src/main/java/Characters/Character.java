@@ -45,6 +45,8 @@ public abstract class Character {
         this.fear = fear;
     }
 
+    public void increaseFear(int fear){this.fear += fear;}
+
     public Room getCurrentRoom() {
         return currentRoom;
     }
